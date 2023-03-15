@@ -149,8 +149,10 @@ Building a Container doing the scraping and conversion:
   
 Caveat:
 - Using Selenium-Chrome will drop you into a root shell in the container
-- Using Selenium-Firefox will drop you into a user shell in the container...
-That makes for quite a difference in behaviour.
+- Using Selenium-Firefox will drop you into a user shell in the container... 
+That makes for quite a difference in behaviour. For the Firefox container, Python modules need to be installed as user seluser. 
+In the Chrome container, you may install these as root. 
+Do also make sure, you're running the scraping script from the user home directory or a directory that is at least user-writeable. Else the Selenium Driver for Firefox will fail miserably (complaining about missing write permission for a log file).
 
 
 ToDo:
