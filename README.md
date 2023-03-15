@@ -8,11 +8,16 @@ I'd love to integrate
 
 - Chinese Solar Generator with approx. 10 kWp,
 - Chinese Battery having a capacity of 20 kWh,
+- Austrian Wallbox capable of 22kW charging,
 - German Electric Vehicle with approx. capacity of 40 kWh,
-- German Heat Pump, 2..4 kW.
+- Not-So-German Heat Pump (normally 2..4 kW, with additional electrical heating of 12kW).
 
 All the stuff is networked and has various - incompatible, of course - APIs.
 
+# Totally unfounded observations
+- Our grid sucks. There's worse but there's also much better. Why? Some time ago EU regulations degraded grid capacity: In the 70s there were massive capacities for residential areas (nuclear power, everybody had electrical heating). Then, EU regulations downgraded the minimum standard (and no one wanted to pay for more than the (newly set) bare minimum). So we now have residential areas which are unfit for large electrical loads (think EV, heat pump,...). I'm happy to live in a house having 3x50 Amps breakers only to have these downgraded to 35 Amps). Finger to you! And a big finger to our officials unable to rectify this mess, instead trying to push electrification while at the same time talking about forced limiting of consumption. 
+- Could someone please fix this mess of incompatible APIs and standards? EU? See above...
+-
 
 # What I've tried...
 
@@ -29,4 +34,9 @@ Long story short: It sucks.
 So I threw that one out. Next idea for surplus charging is hacking a solution with my home automation server.
 
 ## Getting Pricing Data for variable electricity tariffs.
-There's two large consumers (car and heat pump). These loads can be shifted to off-peak times when electricity is much cheaper. That makes having a variable electricity tariff quite logical. Additionally, there's the battery which can be charged when electricity is cheap.
+There's two large consumers (car and heat pump). These loads can be shifted to off-peak times when electricity is much cheaper. That makes having a variable electricity tariff quite logical. Additionally, there's the battery which can be charged when electricity is cheap. but first, we need to get a feel for it. So we need data... Theres different tariffs but all are based on day ahead traded electricity. So we need to access that data. Multiple possible solutions to get data from
+- Spot Market exchange (EPEX)
+- directly from electricity company (Tibber / Awattar)
+- EU Transparency Platform.
+
+
