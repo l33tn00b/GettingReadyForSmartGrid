@@ -39,4 +39,23 @@ There's two large consumers (car and heat pump). These loads can be shifted to o
 - directly from electricity company (Tibber / Awattar)
 - EU Transparency Platform.
 
+### EPEX Spor Market
+- https://www.epexspot.com/en/market-data?market_area=DE-LU&trading_date=2023-03-14&delivery_date=2023-03-15&underlying_year=&modality=Auction&sub_modality=DayAhead&technology=&product=60&data_mode=table&period=&production_period=
+- -Limited Data available (no history)
+- -No (free) download
+- -Requires web scraping
+- +chart available
 
+### Awattar
+Haven't tried for current data yet because they stopped offering to new customers.
+But one can download historical pricing data via their Web API.
+Figuring out the final price is tricky because it doesn't get displayed (only Spot Market Price).
+
+### Tibber
+- -Limited Data available (next day doesn't work)
+- +All inclusive pricing displayed
+- +Better chart than EPEX
+- -Web Scraping required to extract data.
+
+### ENTSO-E (EU Transparency Platform)
+- 
