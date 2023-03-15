@@ -95,7 +95,7 @@ Building a Container doing the scraping and conversion:
 
   Then build it: 
   ```
-  docker build . -t selenium-chrome && 
+  docker build . -t selenium-chrome-test 
   ```
   There should be an image, now:
   ```
