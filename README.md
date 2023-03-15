@@ -73,17 +73,52 @@ This will be an ePaper based display for having data available at a glance in th
 
 Issues:
 - Web Scraping the Chart needs a Browser (Selenium). So the server side component has to be run on a (relatively) beefy machine (so many dependencies). Can't additionally load my little Rapberry with this.
-- Maybe using BeautifulSoup to extract the Tibber SVG chart and render it with something like Imagemagick?
+- (no:) Maybe using BeautifulSoup to extract the Tibber SVG chart and render it with something like Imagemagick? But there's the issue of having an interactive website (Zip Code...). So: no...
 
-Steps to scrape the chart:
+Steps to scrape the chart using Selenium:
 - Load cookies (cookie banner be gone) or run Chrome with appropriate extension.
 - Add Zip Code to input field: ```driver.find_element(By.XPATH, "/html/body/div[1]/main/div[4]/div/section/div/div[1]/div/div/div[1]/div/div/section/div[2]/div/div/div[1]/div/div/span/input")```
 - Click Button: ```input_button = driver.find_element(By.XPATH,"/html/body/div[1]/main/div[4]/div/section/div/div[1]/div/div/div[1]/div/div/section/div[2]/div/div/div[1]/div/div/button")```
 - Find chart: ```price_chart = driver.find_element(By.XPATH,"/html/body/div[1]/main/div[4]/div/section/div/div[1]/div/div/div[1]/div/div/section/div[2]/div")``` 
 - Save Screenshot: ```price_chart.screenshot("<location>")```
 
+Building a Container doing the scraping and conversion:
+- Start by using the official Selenium Chrome Container (https://github.com/SeleniumHQ/docker-selenium): ```docker run selenium/standalone-chrome python3 --version``` Does it run? Good.
+- Thank you, StackOverflow (https://stackoverflow.com/questions/47955548/docker-image-with-python3-chromedriver-chrome-selenium): Create a ```.Dockerfile``` adding Selenium Python Modules to the already installed Selenium:
+  ```
+  FROM selenium/standalone-chrome
+  USER root
+  RUN wget https://bootstrap.pypa.io/get-pip.py
+  RUN python3 get-pip.py
+  RUN python3 -m pip install selenium
+  ``` 
 
-
+  Then build it: 
+  ```
+  docker build . -t selenium-chrome && 
+  ```
+  There should be an image, now:
+  ```
+  root@dockerRunnerTest:/home/<username># docker image list
+  REPOSITORY                   TAG       IMAGE ID       CREATED         SIZE
+  selenium-chrome              latest    dbad8bee893c   2 hours ago     1.38GB
+  selenium/standalone-chrome   latest    f8f3ec83b422   8 days ago      1.3GB
+  hello-world                  latest    feb5d9fea6a5   17 months ago   13.3kB
+  ```
+  
+  Run it, directly going to a Python shell:
+  ```
+  docker run -it selenium-chrome python3
+  ```
+  Test it:
+  ```
+  >>> from selenium import webdriver
+  >>> from selenium.webdriver.common.keys import Keys
+  >>> from selenium.webdriver.common.by import By
+  >>> driver=webdriver.Chrome()
+  ...
+  ```
+  
 #### Actionable Data
 Whoever is selling variable pricing tariffs usually buys electricity on the spot market (and adds some cents to it). So we need that data to determine the optimum times for charging the car and turning off the heat pump.
 
