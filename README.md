@@ -39,7 +39,7 @@ There's two large consumers (car and heat pump). These loads can be shifted to o
 - directly from electricity company (Tibber / Awattar)
 - EU Transparency Platform.
 
-### EPEX Spor Market
+### EPEX Spot Market
 - https://www.epexspot.com/en/market-data?market_area=DE-LU&trading_date=2023-03-14&delivery_date=2023-03-15&underlying_year=&modality=Auction&sub_modality=DayAhead&technology=&product=60&data_mode=table&period=&production_period=
 - -Limited Data available (no history)
 - -No (free) download
