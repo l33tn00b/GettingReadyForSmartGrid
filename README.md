@@ -70,9 +70,17 @@ Figuring out the final price is tricky because it doesn't get displayed (only Sp
 ### Solutions
 #### Data Display (Chart)
 This will be an ePaper based display for having data available at a glance in the kitchen. Probably using the Tibber Chart (because I'll probably end up with their offer since Awattar doesn't accept new customers as of now). So we need to scrape the chart off their website and render it for the ePaper display. This will be based on https://www.stavros.io/posts/making-the-timeframe/.
+
 Issues:
 - Web Scraping the Chart needs a Browser (Selenium). So the server side component has to be run on a (relatively) beefy machine (so many dependencies). Can't additionally load my little Rapberry with this.
 - Maybe using BeautifulSoup to extract the Tibber SVG chart and render it with something like Imagemagick?
+
+Steps to scrape the chart:
+- Load cookies (cookie banner be gone) or run Chrome with appropriate extension.
+- Add Zip Code to input field: ```driver.find_element(By.XPATH, "/html/body/div[1]/main/div[4]/div/section/div/div[1]/div/div/div[1]/div/div/section/div[2]/div/div/div[1]/div/div/span/input")```
+- Click Button: ```input_button = driver.find_element(By.XPATH,"/html/body/div[1]/main/div[4]/div/section/div/div[1]/div/div/div[1]/div/div/section/div[2]/div/div/div[1]/div/div/button")```
+- Find chart: ```price_chart = driver.find_element(By.XPATH,"/html/body/div[1]/main/div[4]/div/section/div/div[1]/div/div/div[1]/div/div/section/div[2]/div")``` 
+- Save Screenshot: ```price_chart.screenshot("<location>")```
 
 
 
