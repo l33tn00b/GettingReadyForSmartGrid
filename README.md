@@ -108,7 +108,7 @@ Building a Container doing the scraping and conversion:
   
   Run it, directly going to a Python shell:
   ```
-  docker run -it --shm-size="2g" selenium-chrome python3
+  docker run -it --shm-size="2g" selenium-chrome-test python3
   ```
   Test it:
   ```
@@ -117,6 +117,11 @@ Building a Container doing the scraping and conversion:
   >>> from selenium.webdriver.common.by import By
   >>> driver=webdriver.Chrome()
   ...
+  ```
+  
+  Run it detached:
+  ```
+  docker run -d --shm-size="2g" selenium-chrome-test
   ```
   
 ToDo:
