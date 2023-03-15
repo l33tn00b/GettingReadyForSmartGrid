@@ -101,7 +101,7 @@ Building a Container doing the scraping and conversion:
   ```
   root@dockerRunnerTest:/home/<username># docker image list
   REPOSITORY                   TAG       IMAGE ID       CREATED         SIZE
-  selenium-chrome              latest    dbad8bee893c   2 hours ago     1.38GB
+  selenium-chrome-test         latest    dbad8bee893c   2 hours ago     1.38GB
   selenium/standalone-chrome   latest    f8f3ec83b422   8 days ago      1.3GB
   hello-world                  latest    feb5d9fea6a5   17 months ago   13.3kB
   ```
@@ -123,11 +123,17 @@ Building a Container doing the scraping and conversion:
   ```
   docker run -d --name busy_shockley --shm-size="2g" selenium-chrome-test
   ```
+  Need to have VNC ? Password is "secret".
+  ```
+  docker run -d -p 7900:7900 --name busy_shockley --shm-size="2g" selenium-chrome-test 
+  ```
+  
   
   Connect to it:
   ```
   docker exec -it busy_shockley /bin/bash
   ```
+  
   
 ToDo:
 - Add conversion scripts from "The Timeframe"
