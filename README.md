@@ -134,6 +134,18 @@ Building a Container doing the scraping and conversion:
   docker exec -it busy_shockley /bin/bash
   ```
   
+  Need to download files? 
+  Mount a host directory into the container. Need to fix permissions first (see https://github.com/SeleniumHQ/docker-selenium last section)
+  ```
+  cd /home/<username>/dockerSeleniumPython
+  mkdir download
+  chown 1200:1201 download
+  ```
+  Start the container, mounting the newly created directory:
+  ```
+  docker run -d -p 7900:7900 --shm-size="2g" --name busy_shockley -v /home/<username>//dockerSeleniumPython/download:/home/seluser/files \
+  selenium-chrome-test
+  ```
   
 ToDo:
 - Add conversion scripts from "The Timeframe"
