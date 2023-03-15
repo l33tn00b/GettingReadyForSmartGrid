@@ -119,6 +119,11 @@ Building a Container doing the scraping and conversion:
   ...
   ```
   
+ToDo:
+- Add conversion scripts from "The Timeframe"
+- Modify Conversion Scripts to crop screenshot
+- Add flask so we may serve the result directly from our container using Python
+  
 #### Actionable Data
 Whoever is selling variable pricing tariffs usually buys electricity on the spot market (and adds some cents to it). So we need that data to determine the optimum times for charging the car and turning off the heat pump.
 
