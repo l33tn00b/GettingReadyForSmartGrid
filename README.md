@@ -147,6 +147,10 @@ Building a Container doing the scraping and conversion:
   selenium-chrome-test
   ```
   
+Caveat:
+- Using Selenium-Chrome will drop you into a root shell in the container
+- Using Selenium-Firefox will drop you into a user shell in the container...
+
 ToDo:
 - Add conversion scripts from "The Timeframe"
 - Modify Conversion Scripts to crop screenshot
