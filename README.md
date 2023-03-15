@@ -28,3 +28,5 @@ Long story short: It sucks.
 
 So I threw that one out. Next idea for surplus charging is hacking a solution with my home automation server.
 
+## Getting Pricing Data for variable electricity tariffs.
+There's two large consumers (car and heat pump). These loads can be shifted to off-peak times when electricity is much cheaper. That makes having a variable electricity tariff quite logical. Additionally, there's the battery which can be charged when electricity is cheap.
