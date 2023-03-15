@@ -58,4 +58,11 @@ Figuring out the final price is tricky because it doesn't get displayed (only Sp
 - -Web Scraping required to extract data.
 
 ### ENTSO-E (EU Transparency Platform)
-- 
+- +historical data available
+- -chart sucks
+- +download data via api 
+- -need to apply for api token
+- +api token is available for free (and pretty quickly)
+- +different formats for download
+- +data download without api is possible (https://transparency.entsoe.eu/transmission-domain/r2/dayAheadPrices/show?name=&defaultValue=false&viewType=TABLE&areaType=BZN&atch=false&dateTime.dateTime=27.03.2022+00:00|CET|DAY&biddingZone.values=CTY|10Y1001A1001A83F!BZN|10Y1001A1001A82H&resolution.values=PT60M&dateTime.timezone=CET_CEST&dateTime.timezone_input=CET+(UTC+1)+/+CEST+(UTC+2)#)
+- +python client for api available (pandas based): https://github.com/EnergieID/entsoe-py
