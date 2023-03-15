@@ -150,6 +150,8 @@ Building a Container doing the scraping and conversion:
 Caveat:
 - Using Selenium-Chrome will drop you into a root shell in the container
 - Using Selenium-Firefox will drop you into a user shell in the container...
+That makes for quite a difference in behaviour.
+
 
 ToDo:
 - Add conversion scripts from "The Timeframe"
