@@ -108,7 +108,7 @@ Building a Container doing the scraping and conversion:
   
   Run it, directly going to a Python shell:
   ```
-  docker run -it selenium-chrome python3
+  docker run -it --shm-size="2g" selenium-chrome python3
   ```
   Test it:
   ```
