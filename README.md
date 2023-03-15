@@ -157,7 +157,8 @@ Do also make sure, you're running the scraping script from the user home directo
 
 ToDo:
 - Add conversion scripts from "The Timeframe"
-- Modify Conversion Scripts to crop screenshot
+- Modify Conversion Scripts to crop screenshot (done)
+- Change background in selenium to white (for screenshot)
 - Add flask so we may serve the result directly from our container using Python
   
 #### Actionable Data
