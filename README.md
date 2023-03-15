@@ -55,7 +55,7 @@ Figuring out the final price is tricky because it doesn't get displayed (only Sp
 - -Limited Data available (next day doesn't work)
 - +All inclusive pricing displayed
 - +Better chart than EPEX
-- -Web Scraping required to extract data.
+- -Web Scraping required to extract data (chart only, table can only be scraped by clicking through the chart -> selenium).
 
 ### ENTSO-E (EU Transparency Platform)
 - +historical data available
@@ -66,3 +66,18 @@ Figuring out the final price is tricky because it doesn't get displayed (only Sp
 - +different formats for download
 - +data download without api is possible (https://transparency.entsoe.eu/transmission-domain/r2/dayAheadPrices/show?name=&defaultValue=false&viewType=TABLE&areaType=BZN&atch=false&dateTime.dateTime=27.03.2022+00:00|CET|DAY&biddingZone.values=CTY|10Y1001A1001A83F!BZN|10Y1001A1001A82H&resolution.values=PT60M&dateTime.timezone=CET_CEST&dateTime.timezone_input=CET+(UTC+1)+/+CEST+(UTC+2)#)
 - +python client for api available (pandas based): https://github.com/EnergieID/entsoe-py
+
+### Solutions
+#### Data Display (Chart)
+This will be an ePaper based display for having data available at a glance in the kitchen. Probably using the Tibber Chart (because I'll probably end up with their offer since Awattar doesn't accept new customers as of now). So we need to scrape the chart off their website and render it for the ePaper display. This will be based on https://www.stavros.io/posts/making-the-timeframe/.
+Issues:
+- Web Scraping the Chart needs a Browser (Selenium). So the server side component has to be run on a (relatively) beefy machine (so many dependencies). Can't additionally load my little Rapberry with this.
+- Maybe using BeautifulSoup to extract the Tibber SVG chart and render it with something like Imagemagick?
+
+
+
+#### Actionable Data
+Whoever is selling variable pricing tariffs usually buys electricity on the spot market (and adds some cents to it). So we need that data to determine the optimum times for charging the car and turning off the heat pump.
+
+
+### 
