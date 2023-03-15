@@ -84,7 +84,7 @@ Steps to scrape the chart using Selenium:
 
 Building a Container doing the scraping and conversion:
 - Start by using the official Selenium Chrome Container (https://github.com/SeleniumHQ/docker-selenium): ```docker run selenium/standalone-chrome python3 --version``` Does it run? Good.
-- Thank you, StackOverflow (https://stackoverflow.com/questions/47955548/docker-image-with-python3-chromedriver-chrome-selenium): Create a ```.Dockerfile``` adding Selenium Python Modules to the already installed Selenium:
+- Thank you, StackOverflow (https://stackoverflow.com/questions/47955548/docker-image-with-python3-chromedriver-chrome-selenium): Create a ```Dockerfile``` adding Selenium Python Modules to the already installed Selenium:
   ```
   FROM selenium/standalone-chrome
   USER root
