@@ -121,7 +121,7 @@ Building a Container doing the scraping and conversion:
   
   Run it detached:
   ```
-  docker run -d -t busy_shockley --shm-size="2g" selenium-chrome-test
+  docker run -d --name busy_shockley --shm-size="2g" selenium-chrome-test
   ```
   
   Connect to it:
