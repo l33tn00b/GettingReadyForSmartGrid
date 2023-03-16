@@ -184,11 +184,12 @@ ToDo:
 - Add conversion scripts from "The Timeframe"
 - Modify Conversion Scripts to crop screenshot (done)
 - Change background in selenium to white (for screenshot) (done, doesn't work, so we invert the colors using Python Imaging Library (Pillow))
-- Change container time to local timezone
-- Add flask so we may serve the result directly from our container using Python
+- Change container time to local timezone (done)
+- Add flask so we may serve the result directly from our container using Python (not)
 
 Things that probably never will come to pass:
-- Proper certificates for https 
+- Proper certificates for https (maybe https://anuragbhatia.com/2020/05/sys-admin/automated-ssl-certificate-management-for-private-containers/)
+
   
 #### Actionable Data
 Whoever is selling variable pricing tariffs usually buys electricity on the spot market (and adds some cents to it). So we need that data to determine the optimum times for charging the car and turning off the heat pump.
