@@ -110,6 +110,7 @@ Building a Container doing the scraping and conversion:
   selenium/standalone-chrome   latest    f8f3ec83b422   8 days ago      1.3GB
   hello-world                  latest    feb5d9fea6a5   17 months ago   13.3kB
   ```
+  What an irony. Using a GB-sized container for generating a kB-sized image. 
   
   Run it, directly going to a Python shell:
   ```
