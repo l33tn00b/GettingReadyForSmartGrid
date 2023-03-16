@@ -153,6 +153,11 @@ Building a Container doing the scraping and conversion:
   selenium-chrome-test
   ```
   
+  Selenium's containers run Openshift. So there is a supervisord coordinating programs/services inside the container.
+  Senenium's supervisor configuration is given in ```/etc/supervisor/conf.d/selenium.conf```. We'll just add another ```.conf```file handling
+  - Initial scrape after container startup (further scrapes will be initiated by a cronjob starting the scrape script),
+  - Flask HTTP server startup.
+  
 Caveat:
 - Container Differences
   - Using Selenium-Chrome will drop you into a root shell in the container
