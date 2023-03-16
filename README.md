@@ -121,7 +121,7 @@ Building a Container doing the scraping and conversion:
   
   Run it, directly going to a Python shell:
   ```
-  docker run -it --shm-size="2g" selenium-chrome-test python3
+  docker run -it --shm-size="2g" selenium-firefox-test python3
   ```
   Test it:
   ```
@@ -134,11 +134,11 @@ Building a Container doing the scraping and conversion:
   
   Run it detached:
   ```
-  docker run -d --name busy_shockley --shm-size="2g" selenium-chrome-test
+  docker run -d -e "TZ=Europe/Berlin" --name busy_shockley --shm-size="2g" selenium-firefox-test
   ```
   Need to have VNC ? Password is "secret".
   ```
-  docker run -d -p 7900:7900 --name busy_shockley --shm-size="2g" selenium-chrome-test 
+  docker run -d -e "TZ=Europe/Berlin" -p 7900:7900 --name busy_shockley --shm-size="2g" selenium-firefox-test 
   ```
   
   
@@ -156,8 +156,7 @@ Building a Container doing the scraping and conversion:
   ```
   Start the container, mounting the newly created directory:
   ```
-  docker run -d -p 7900:7900 --shm-size="2g" --name busy_shockley -v /home/<username>/dockerSeleniumPython/download:/home/seluser/files \
-  selenium-chrome-test
+  docker run -d -e "TZ=Europe/Berlin" -p 7900:7900 --shm-size="2g" --name busy_shockley -v /home/<username>/dockerSeleniumPython/download:/home/seluser/files selenium-firefox-test
   ```
   
   Selenium's containers run Openshift. So there is a supervisord coordinating programs/services inside the container.
