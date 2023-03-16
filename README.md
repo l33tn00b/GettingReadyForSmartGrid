@@ -73,7 +73,13 @@ This will be an ePaper based display for having data available at a glance in th
 The resulting picture for display (having completed steps given below):
 ![Image for ePaper Display](tibber_chart_inverted.png "Tibber Price Chart prepared for ePaper Display, Firefox Capture")
 
+Result: 
+I've created a container automating the scraping and serving the image of the Tibber price chart for the Timeframe to fetch.
 
+Customization: 
+The container is customized for my location. You will have / might want to change: 
+- Zip Code inside ```scripts/scrape_firefox.py```. This will affect price calculation. Each municipality has different pricing.
+- Timezone inside ```timezone/timezone```. The container runs on local german time (timezone ```Europe/Berlin```)
 
 
 Issues:
