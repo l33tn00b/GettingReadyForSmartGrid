@@ -177,7 +177,8 @@ Do also make sure, you're running the scraping script from the user home directo
 ToDo:
 - Add conversion scripts from "The Timeframe"
 - Modify Conversion Scripts to crop screenshot (done)
-- Change background in selenium to white (for screenshot) (doesn't work, so we invert the colors using Python Imaging Library (Pillow))
+- Change background in selenium to white (for screenshot) (done, doesn't work, so we invert the colors using Python Imaging Library (Pillow))
+- Change container time to local timezone
 - Add flask so we may serve the result directly from our container using Python
   
 #### Actionable Data
