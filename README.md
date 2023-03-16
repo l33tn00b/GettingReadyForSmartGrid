@@ -70,6 +70,11 @@ Figuring out the final price is tricky because it doesn't get displayed (only Sp
 ### Solutions
 #### Data Display (Chart)
 This will be an ePaper based display for having data available at a glance in the kitchen. Probably using the Tibber Chart (because I'll probably end up with their offer since Awattar doesn't accept new customers as of now). So we need to scrape the chart off their website and render it for the ePaper display. This will be based on https://www.stavros.io/posts/making-the-timeframe/.
+The resulting picture for display (having completed steps given below):
+![Image for ePaper Display](tibber_chart_inverted.png "Tibber Price Chart prepared for ePaper Display, Firefox Capture")
+
+
+
 
 Issues:
 - Web Scraping the Chart needs a Browser (Selenium). So the server side component has to be run on a (relatively) beefy machine (so many dependencies). Can't additionally load my little Rapberry with this.
@@ -165,7 +170,7 @@ Do also make sure, you're running the scraping script from the user home directo
 ToDo:
 - Add conversion scripts from "The Timeframe"
 - Modify Conversion Scripts to crop screenshot (done)
-- Change background in selenium to white (for screenshot)
+- Change background in selenium to white (for screenshot) (doesn't work, so we invert the colors using Python Imaging Library (Pillow))
 - Add flask so we may serve the result directly from our container using Python
   
 #### Actionable Data
