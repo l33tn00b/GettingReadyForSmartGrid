@@ -86,6 +86,7 @@ Steps to scrape the chart using Selenium:
 - Click Button: ```input_button = driver.find_element(By.XPATH,"/html/body/div[1]/main/div[4]/div/section/div/div[1]/div/div/div[1]/div/div/section/div[2]/div/div/div[1]/div/div/button")```
 - Find chart: ```price_chart = driver.find_element(By.XPATH,"/html/body/div[1]/main/div[4]/div/section/div/div[1]/div/div/div[1]/div/div/section/div[2]/div")``` 
 - Save Screenshot: ```price_chart.screenshot("<location>")```
+This will -of course- be badly broken if Tibber decide to change their website (absolute XPATHs for identification of objects).
 
 Building a Container doing the scraping and conversion:
 - Start by using the official Selenium Chrome Container (https://github.com/SeleniumHQ/docker-selenium): ```docker run selenium/standalone-chrome python3 --version``` Does it run? Good.
