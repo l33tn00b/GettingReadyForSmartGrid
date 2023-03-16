@@ -186,6 +186,7 @@ ToDo:
 - Change container time to local timezone (done, see https://github.com/SeleniumHQ/docker-selenium/wiki/Setting-a-Timezone)
 - Add flask so we may serve the result directly from our container using Python (not, instead use proper server for https)
 - Set Zip Code via env parameter at container startup.
+- Add timestamp to screencapture to show latest update
 
 Things that probably never will come to pass:
 - Proper certificates for https (maybe https://anuragbhatia.com/2020/05/sys-admin/automated-ssl-certificate-management-for-private-containers/)
