@@ -155,9 +155,12 @@ That makes for quite a difference in behaviour. For the Firefox container, Pytho
 In the Chrome container, you may install these as root. 
 Do also make sure, you're running the scraping script from the user home directory or a directory that is at least user-writeable. Else the Selenium Driver for Firefox will fail miserably (complaining about missing write permission for a log file).
 
-- Browser Differences
+- Browser Differences  
   Screenshots will be different, see below. Firefox will give a better result by capturing the axes. So the script/Dockerfile is written for the Selenium-Firefox container.
-  
+  Chrome: 
+  ![Chrome Screenshot](tibber_price_chart_chromium.png "Tibber Price Chart Render, Chromium Capture")
+  Firefox: 
+  ![Firefox Screenshot](tibber_price_chart_firefox.png "Tibber Price Chart Render, Firefox Capture")
 
 ToDo:
 - Add conversion scripts from "The Timeframe"
