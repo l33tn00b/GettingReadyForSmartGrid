@@ -79,7 +79,7 @@ I've created a container automating the scraping and serving the image of the Ti
 Customization: 
 The container is customized for my location. You will have / might want to change: 
 - Zip Code inside ```scripts/scrape_firefox.py```. This will affect price calculation. Each municipality has different pricing.
-- Timezone inside ```timezone/timezone```. The container runs on local german time (timezone ```Europe/Berlin```)
+- Timezone via env parameter at container startup.
 
 
 Issues:
@@ -184,7 +184,8 @@ ToDo:
 - Modify Conversion Scripts to crop screenshot (done)
 - Change background in selenium to white (for screenshot) (done, doesn't work, so we invert the colors using Python Imaging Library (Pillow))
 - Change container time to local timezone (done, see https://github.com/SeleniumHQ/docker-selenium/wiki/Setting-a-Timezone)
-- Add flask so we may serve the result directly from our container using Python (not)
+- Add flask so we may serve the result directly from our container using Python (not, instead use proper server for https)
+- Set Zip Code via env parameter at container startup.
 
 Things that probably never will come to pass:
 - Proper certificates for https (maybe https://anuragbhatia.com/2020/05/sys-admin/automated-ssl-certificate-management-for-private-containers/)
