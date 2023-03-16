@@ -143,7 +143,7 @@ Building a Container doing the scraping and conversion:
   ```
   Start the container, mounting the newly created directory:
   ```
-  docker run -d -p 7900:7900 --shm-size="2g" --name busy_shockley -v /home/<username>//dockerSeleniumPython/download:/home/seluser/files \
+  docker run -d -p 7900:7900 --shm-size="2g" --name busy_shockley -v /home/<username>/dockerSeleniumPython/download:/home/seluser/files \
   selenium-chrome-test
   ```
   
