@@ -79,7 +79,8 @@ The container is based on Selenium-Firefox and has additional modifications to a
 
 Customization: 
 The container is customized for my location. You will have / might want to change: 
-- Zip Code inside ```scripts/scrape_firefox.py```. This will affect price calculation. Each municipality has different pricing.
+- Zip code via ```ENV``` parameter in Dockerfile or at runtime (```-e "PLZ=<your zip code>"```). This will affect price calculation. Each municipality has different pricing.
+- Zip Code check inside ```scripts/scrape_firefox.py```. Currently, only numbers are acceptable input.
 - Timezone via env parameter at container startup.
 
 
