@@ -135,11 +135,11 @@ Building a Container doing the scraping and conversion:
   
   Run it detached:
   ```
-  docker run -d -e "TZ=Europe/Berlin" --name busy_shockley --shm-size="2g" selenium-firefox-test
+  docker run -d -e "TZ=Europe/Berlin" -p 8999:8999 --name busy_shockley --shm-size="2g" selenium-firefox-test
   ```
   Need to have VNC ? Password is "secret".
   ```
-  docker run -d -e "TZ=Europe/Berlin" -p 7900:7900 --name busy_shockley --shm-size="2g" selenium-firefox-test 
+  docker run -d -e "TZ=Europe/Berlin" -p 7900:7900 -p 8999:8999 --name busy_shockley --shm-size="2g" selenium-firefox-test 
   ```
   
   
@@ -157,7 +157,7 @@ Building a Container doing the scraping and conversion:
   ```
   Start the container, mounting the newly created directory:
   ```
-  docker run -d -e "TZ=Europe/Berlin" -p 7900:7900 --shm-size="2g" --name busy_shockley -v /home/<username>/dockerSeleniumPython/download:/home/seluser/files selenium-firefox-test
+  docker run -d -e "TZ=Europe/Berlin" -p 7900:7900 -p 8999:8999 --shm-size="2g" --name busy_shockley -v /home/<username>/dockerSeleniumPython/download:/home/seluser/files selenium-firefox-test
   ```
   
   Selenium's containers run Openshift. So there is a supervisord coordinating programs/services inside the container.
@@ -192,6 +192,7 @@ ToDo:
 - Add flask so we may serve the result directly from our container using Python (not, instead use proper server for https, nginx, done)
 - Set Zip Code via env parameter at container startup.
 - Add timestamp to screencapture to show latest update
+- Use generated/provided DH parameters (https://github.com/MarvAmBass/docker-nginx-ssl-secure/blob/master/ssl.conf)
 
 Things that probably never will come to pass:
 - Proper certificates for https (maybe https://anuragbhatia.com/2020/05/sys-admin/automated-ssl-certificate-management-for-private-containers/)
