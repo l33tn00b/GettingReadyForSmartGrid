@@ -180,7 +180,8 @@ Do also make sure, you're running the scraping script from the user home directo
   Firefox: 
   ![Firefox Screenshot](tibber_price_chart_firefox.png "Tibber Price Chart Render, Firefox Capture")
 
-- cron needs to be (re-)started at container init.
+- cron needs to be (re-)started at container init (because there is no init system)
+- per-user crontabs are dicey. Use system-wide /etc/crontab instead.
 - Supervisor (I think) runs as non-root user in the Firefox container. So we cannot run conf-scripts demanding switching to user=root. Working around that by using sudo in the shell script.
 - https keys generation: I'd have loved to properly do this on the fly at container startup. But generating keys takes quite a long time. So we either use shorter keys (or copy pre-made ones into the container).
 
