@@ -186,6 +186,9 @@ Do also make sure, you're running the scraping script from the user home directo
 - Supervisor (I think) runs as non-root user in the Firefox container. So we cannot run conf-scripts demanding switching to user=root. Working around that by using sudo in the shell script.
 - https keys generation: I'd have loved to properly do this on the fly at container startup. But generating keys takes quite a long time. So we either use shorter keys (or copy pre-made ones into the container).
 
+Time zone issues:
+- Getting the correct local time inside the Selenium container is quite a feat. Time zone is set via an env parameter. This will only be honored when in a normal shell (because the system in the cotainer still runs on UTC as set in /etc/timezone). When running our cronjob to do once-a-day scraping we'd like to add a timestamp to the image. But this is not a normal shell, it's a cronjob. So any time queries will fall back to responding in UTC. Resorted to using a shell command in the Python scrape script. Not portable at all. But since we're in a linux-based container it probably doesn't matter much. It works. Doesn't have to be beautiful.
+
 ToDo:
 - Add conversion scripts from "The Timeframe"
 - Modify Conversion Scripts to crop screenshot (done)
