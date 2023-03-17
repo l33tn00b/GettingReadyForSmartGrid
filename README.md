@@ -99,7 +99,7 @@ Building a Container doing the scraping and conversion:
 - Start by using the official Selenium Chrome Container (https://github.com/SeleniumHQ/docker-selenium): ```docker run selenium/standalone-chrome python3 --version``` Does it run? Good.
 - Thank you, StackOverflow (https://stackoverflow.com/questions/47955548/docker-image-with-python3-chromedriver-chrome-selenium): Create a ```Dockerfile``` adding Selenium Python Modules to the already installed Selenium:
   ```
-  FROM selenium/standalone-chrome
+  FROM selenium/standalone-firefox
   USER root
   RUN wget https://bootstrap.pypa.io/get-pip.py
   RUN python3 get-pip.py
@@ -108,14 +108,14 @@ Building a Container doing the scraping and conversion:
 
   Then build it: 
   ```
-  docker build . -t selenium-chrome-test 
+  docker build . -t selenium-firefox-test 
   ```
   There should be an image, now:
   ```
   root@dockerRunnerTest:/home/<username># docker image list
   REPOSITORY                   TAG       IMAGE ID       CREATED         SIZE
-  selenium-chrome-test         latest    dbad8bee893c   2 hours ago     1.38GB
-  selenium/standalone-chrome   latest    f8f3ec83b422   8 days ago      1.3GB
+  selenium-firefox-test        latest    dbad8bee893c   2 hours ago     1.38GB
+  selenium/standalone-firefox  latest    f8f3ec83b422   8 days ago      1.3GB
   hello-world                  latest    feb5d9fea6a5   17 months ago   13.3kB
   ```
   What an irony. Using a GB-sized container for generating a kB-sized image. 
@@ -129,7 +129,7 @@ Building a Container doing the scraping and conversion:
   >>> from selenium import webdriver
   >>> from selenium.webdriver.common.keys import Keys
   >>> from selenium.webdriver.common.by import By
-  >>> driver=webdriver.Chrome()
+  >>> driver=webdriver.Firefox()
   ...
   ```
   
@@ -192,7 +192,7 @@ ToDo:
 - Change container time to local timezone (done, see https://github.com/SeleniumHQ/docker-selenium/wiki/Setting-a-Timezone)
 - Add flask so we may serve the result directly from our container using Python (not, instead use proper server for https, nginx, done)
 - Set Zip Code via env parameter at container startup.
-- Add timestamp to screencapture to show latest update
+- Add timestamp to screencapture to show latest update (done)
 - Use generated/provided DH parameters (https://github.com/MarvAmBass/docker-nginx-ssl-secure/blob/master/ssl.conf)
 
 Things that probably never will come to pass:
