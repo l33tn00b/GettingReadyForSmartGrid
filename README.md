@@ -179,6 +179,8 @@ Do also make sure, you're running the scraping script from the user home directo
   Firefox: 
   ![Firefox Screenshot](tibber_price_chart_firefox.png "Tibber Price Chart Render, Firefox Capture")
 
+- Supervisor (i think) runs as non-root user in the Firefox container. So we cannot run conf-scripts demanding switching to user=root. Working around that by using sudo in the shell script.
+
 ToDo:
 - Add conversion scripts from "The Timeframe"
 - Modify Conversion Scripts to crop screenshot (done)
