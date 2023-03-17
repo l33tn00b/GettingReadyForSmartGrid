@@ -181,6 +181,7 @@ Do also make sure, you're running the scraping script from the user home directo
 
 - cron needs to be (re-)started at container init.
 - Supervisor (I think) runs as non-root user in the Firefox container. So we cannot run conf-scripts demanding switching to user=root. Working around that by using sudo in the shell script.
+- https keys generation: I'd have loved to do this one on the fly at container startup. But generating keys takes quite a long time. So we either use shorter keys or copy pre-made ones into the container.
 
 ToDo:
 - Add conversion scripts from "The Timeframe"
