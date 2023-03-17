@@ -182,21 +182,21 @@ Do also make sure, you're running the scraping script from the user home directo
 
 - cron needs to be (re-)started at container init.
 - Supervisor (I think) runs as non-root user in the Firefox container. So we cannot run conf-scripts demanding switching to user=root. Working around that by using sudo in the shell script.
-- https keys generation: I'd have loved to do this one on the fly at container startup. But generating keys takes quite a long time. So we either use shorter keys or copy pre-made ones into the container.
+- https keys generation: I'd have loved to properly do this on the fly at container startup. But generating keys takes quite a long time. So we either use shorter keys (or copy pre-made ones into the container).
 
 ToDo:
 - Add conversion scripts from "The Timeframe"
 - Modify Conversion Scripts to crop screenshot (done)
 - Change background in selenium to white (for screenshot) (done, doesn't work, so we invert the colors using Python Imaging Library (Pillow))
 - Change container time to local timezone (done, see https://github.com/SeleniumHQ/docker-selenium/wiki/Setting-a-Timezone)
-- Add flask so we may serve the result directly from our container using Python (not, instead use proper server for https)
+- Add flask so we may serve the result directly from our container using Python (not, instead use proper server for https, nginx, done)
 - Set Zip Code via env parameter at container startup.
 - Add timestamp to screencapture to show latest update
 
 Things that probably never will come to pass:
 - Proper certificates for https (maybe https://anuragbhatia.com/2020/05/sys-admin/automated-ssl-certificate-management-for-private-containers/)
 - Give users a choice of length for DH group via env parameters (https://github.com/MarvAmBass/docker-nginx-ssl-secure).
-- Proper handling of security updates.
+- Proper handling of security updates (crude cron-based solution running unattended-upgrades once a day. Risk of breaking things.).
 
   
 #### Actionable Data
