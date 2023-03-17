@@ -194,7 +194,8 @@ ToDo:
 
 Things that probably never will come to pass:
 - Proper certificates for https (maybe https://anuragbhatia.com/2020/05/sys-admin/automated-ssl-certificate-management-for-private-containers/)
-- Give users a choice of length for DH group via env parameters (https://github.com/MarvAmBass/docker-nginx-ssl-secure)
+- Give users a choice of length for DH group via env parameters (https://github.com/MarvAmBass/docker-nginx-ssl-secure).
+- Proper handling of security updates.
 
   
 #### Actionable Data
