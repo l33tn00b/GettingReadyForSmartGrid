@@ -75,7 +75,7 @@ The resulting picture for display (having completed steps given below):
 
 Result: 
 I've created a container automating the scraping and serving the image of the Tibber price chart for the Timeframe to fetch.
-The container is based on Selenium-Firefox and has additional modifications to automate scraping and serving the result. The web server runs on port 8999 (https) using on-the-fly generated keys.
+The container is based on Selenium-Firefox and has additional modifications to automate scraping and serving the result. The web server runs on port 8999 (https) using on-the-fly generated keys. Just why? Because if your tool is a hammer, every problem looks like a nail. Tool = Selenium. 
 
 Customization: 
 The container is customized for my location. You will have / might want to change: 
