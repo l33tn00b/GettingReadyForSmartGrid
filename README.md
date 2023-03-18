@@ -1,7 +1,7 @@
 # Preface
 Getting ready for Smart Grid Integration
 
-This is to document how I'm grappling with Smart Grid Integration.
+This is to document how I'm grappling with Smart Grid Integration. 
 
 # Equipment
 I'd love to integrate
@@ -34,6 +34,14 @@ Long story short: It sucks.
 So I threw that one out. Next idea for surplus charging is hacking a solution with my home automation server.
 
 ## Getting Pricing Data for variable electricity tariffs.
+Dynamic electricity prices are a thing in Europe. Many European countries have implemented dynamic pricing schemes as part of their efforts to transition to a more sustainable and efficient energy system.
+
+For example, in the UK, many energy suppliers offer time-of-use tariffs that vary the cost of electricity depending on the time of day. In France, the "Heures Creuses" (off-peak hours) system offers reduced electricity prices during certain hours of the day and night. Similarly, in Germany, some utilities offer "GrünstromIndex" tariffs that adjust the cost of electricity based on the availability of renewable energy sources.
+
+The European Union has also encouraged the implementation of dynamic pricing schemes as part of its efforts to promote energy efficiency and reduce greenhouse gas emissions. The EU's Energy Efficiency Directive requires member states to ensure that "final customers are provided with electricity tariffs that reflect the cost of supplying electricity at different times, where it is technically and economically feasible to do so."
+
+While not yet prevalent, dynamic electricity prices are increasingly common in Europe as utilities and governments look for ways to promote a more efficient, sustainable, and consumer-friendly energy system.
+
 There's two large consumers (car and heat pump). These loads can be shifted to off-peak times when electricity is much cheaper. That makes having a variable electricity tariff quite logical. Additionally, there's the battery which can be charged when electricity is cheap. but first, we need to get a feel for it. So we need data... Theres different tariffs but all are based on day ahead traded electricity. So we need to access that data. Multiple possible solutions to get data from
 - Spot Market exchange (EPEX)
 - directly from electricity company (Tibber / Awattar)
