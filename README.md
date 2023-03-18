@@ -89,7 +89,7 @@ Issues:
 - (no:) Maybe using BeautifulSoup to extract the Tibber SVG chart and render it with something like Imagemagick? But there's the issue of having an interactive website (Zip Code...). So: no...
 
 Steps to scrape the chart using Selenium:
-- Load cookies (cookie banner be gone) or run Chrome with appropriate extension.
+- Load cookies (cookie banner be gone) or run browser with appropriate extension (need to install it in Selenium container).
 - Add Zip Code to input field: ```driver.find_element(By.XPATH, "/html/body/div[1]/main/div[4]/div/section/div/div[1]/div/div/div[1]/div/div/section/div[2]/div/div/div[1]/div/div/span/input")```
 - Click Button: ```input_button = driver.find_element(By.XPATH,"/html/body/div[1]/main/div[4]/div/section/div/div[1]/div/div/div[1]/div/div/section/div[2]/div/div/div[1]/div/div/button")```
 - Find chart: ```price_chart = driver.find_element(By.XPATH,"/html/body/div[1]/main/div[4]/div/section/div/div[1]/div/div/div[1]/div/div/section/div[2]/div")``` 
