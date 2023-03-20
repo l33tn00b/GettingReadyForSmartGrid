@@ -42,6 +42,7 @@ The European Union has also encouraged the implementation of dynamic pricing sch
 
 While not yet prevalent, dynamic electricity prices are increasingly common in Europe as utilities and governments look for ways to promote a more efficient, sustainable, and consumer-friendly energy system.
 
+
 There's two large consumers (car and heat pump). These loads can be shifted to off-peak times when electricity is much cheaper. That makes having a variable electricity tariff quite logical. Additionally, there's the battery which can be charged when electricity is cheap. but first, we need to get a feel for it. So we need data... Theres different tariffs but all are based on day ahead traded electricity. So we need to access that data. Multiple possible solutions to get data from
 - Spot Market exchange (EPEX)
 - directly from electricity company (Tibber / Awattar)
